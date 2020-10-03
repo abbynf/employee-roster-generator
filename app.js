@@ -44,7 +44,6 @@ function askManager() {
         .then(function (response) {
             const newManager = new Manager.Manager(response.managerName, response.managerId, response.managerEmail, response.officeNumber)
             employees.push(newManager)
-            console.log(employees);
         })
         .then(function () {
             anotherEmployee();
@@ -87,13 +86,13 @@ function askEngineer() {
             },
             {
                 type: "input",
-                message: "What is the engineer's email?",
-                name: "engineerEmail"
+                message: "What is the engineer's ID?",
+                name: "engineerID"
             },
             {
                 type: "input",
-                message: "What is the engineer's ID?",
-                name: "engineerID"
+                message: "What is the engineer's email?",
+                name: "engineerEmail"
             },
             {
                 type: "input",
@@ -102,7 +101,8 @@ function askEngineer() {
             }
         ])
         .then(function (response) {
-            console.log(response);
+            const newEngineer = new Engineer.Engineer(response.engineerName, response.engineerID, response.engineerEmail, response.github);
+            employees.push(newEngineer);
         })
         .then(function () {
             anotherEmployee();
@@ -119,13 +119,13 @@ function askIntern() {
             },
             {
                 type: "input",
-                message: "What is the intern's email?",
-                name: "internEmail"
+                message: "What is the intern's ID?",
+                name: "internId"
             },
             {
                 type: "input",
-                message: "What is the intern's ID?",
-                name: "internId"
+                message: "What is the intern's email?",
+                name: "internEmail"
             },
             {
                 type: "input",
