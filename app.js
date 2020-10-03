@@ -97,9 +97,39 @@ function askEngineer(){
     })
 }
 
-askEngineer();
+function askIntern(){
+    inquirer
+    .prompt([
+        {
+            type: "input",
+            message: "What is the intern's name?",
+            name: "internName"
+        },
+        {
+            type: "input",
+            message: "What is the intern's email?",
+            name: "internEmail"
+        },
+        {
+            type: "input",
+            message: "What is the intern's ID?",
+            name: "internId"
+        },
+        {
+            type: "input",
+            message: "What is the intern's school?",
+            name: "internSchool"
+        }
+    ])
+    .then(function(response){
+        console.log(response)
+    })
+    .then(function(){
+        anotherEmployee();
+    })
+}
 
-
+askIntern();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
