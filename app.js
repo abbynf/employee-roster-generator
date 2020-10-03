@@ -72,7 +72,7 @@ function anotherEmployee() {
                 askIntern();
             }
             else {
-                console.log("Success!");
+                console.log("Response recorded!");
                 startRender(employees);
 
             }
@@ -85,7 +85,7 @@ function startRender(employees){
         if (err){
             return console.log(err)
         }
-        console.log("success")
+        console.log("File generated.")
     })
 }
 
