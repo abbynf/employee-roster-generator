@@ -26,14 +26,15 @@ function askManager() {
             },
             {
                 type: "input",
-                message: "What is the manager's email?",
-                name: "managerEmail"
-            },
-            {
-                type: "input",
                 message: "What is the manager's ID?",
                 name: "managerId"
             },
+            {
+                type: "input",
+                message: "What is the manager's email?",
+                name: "managerEmail"
+            },
+
             {
                 type: "input",
                 message: "What is the manager's office number?",
@@ -41,7 +42,9 @@ function askManager() {
             }
         ])
         .then(function (response) {
-            console.log(response);
+            const newManager = new Manager.Manager(response.managerName, response.managerId, response.managerEmail, response.officeNumber)
+            employees.push(newManager)
+            console.log(employees);
         })
         .then(function () {
             anotherEmployee();
