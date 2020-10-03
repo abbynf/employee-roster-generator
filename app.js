@@ -48,7 +48,7 @@ function askManager(){
         })
         }
 
-askManager();
+// askManager();
 
 function anotherEmployee(){
     inquirer
@@ -65,7 +65,36 @@ function anotherEmployee(){
         })
 }
 
+function askEngineer(){
+    inquirer
+    .prompt([
+        {  
+            type: "input",
+            message:"What is the engineer's name?",
+            name: "engineerName"
+        },
+        {
+            type: "input",
+            message: "What is the engineer's email?",
+            name: "engineerEmail"
+        },
+        {
+            type: "input",
+            message: "What is the engineer's ID?",
+            name: "engineerID"
+        },
+        {
+            type: "input",
+            message: "What is the engineer's github username?",
+            name: "github"
+        }
+    ])
+    .then(function(response){
+        console.log(response);
+    })
+}
 
+askEngineer();
 
 
 // After the user has input all employees desired, call the `render` function (required
