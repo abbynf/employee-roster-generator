@@ -42,9 +42,31 @@ function askManager(){
         ])
         .then(function(response) {
             console.log(response);
-})}
+        })
+        .then(function(){
+            anotherEmployee();
+        })
+        }
 
 askManager();
+
+function anotherEmployee(){
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "Would you like to add another employee?",
+                choices: ["Add a new engineer", "Add a new intern", "No more to add"],
+                name: "anothertype"
+            }
+        ])
+        .then(function(response){
+            console.log(response)
+        })
+}
+
+
+
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
