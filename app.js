@@ -92,6 +92,9 @@ function askEngineer(){
     .then(function(response){
         console.log(response);
     })
+    .then(function(){
+        anotherEmployee();
+    })
 }
 
 askEngineer();
