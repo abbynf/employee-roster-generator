@@ -44,13 +44,14 @@ function askManager() {
         .then(function (response) {
             const newManager = new Manager.Manager(response.managerName, response.managerId, response.managerEmail, response.officeNumber)
             employees.push(newManager)
+            console.log(newManager.getOfficeNumber())
         })
         .then(function () {
             anotherEmployee();
         })
 }
 
-askManager();
+askManager()
 
 function anotherEmployee() {
     inquirer
@@ -72,8 +73,20 @@ function anotherEmployee() {
             }
             else {
                 console.log("Success!");
+                startRender(employees);
+
             }
         })
+}
+
+function startRender(employees){
+    var htmlpage = render(employees);
+    fs.writeFile(outputPath, htmlpage, function(err){
+        if (err){
+            return console.log(err)
+        }
+        console.log("success")
+    })
 }
 
 function askEngineer() {
@@ -146,6 +159,8 @@ function askIntern() {
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
+
+
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
