@@ -134,7 +134,8 @@ function askIntern() {
             }
         ])
         .then(function (response) {
-            console.log(response)
+            const newIntern = new Intern.Intern(response.internName, response.internId, response.internEmail, response.internSchool);
+            employees.push(newIntern);
         })
         .then(function () {
             anotherEmployee();
