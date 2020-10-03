@@ -62,6 +62,15 @@ function anotherEmployee() {
         ])
         .then(function (response) {
             console.log(response)
+            if (response.anothertype === "Add a new engineer"){
+                askEngineer();
+            }
+            else if (response.anothertype === "Add a new intern"){
+                askIntern();
+            }
+            else {
+                console.log("Success!");
+            }
         })
 }
 
