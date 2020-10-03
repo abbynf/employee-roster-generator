@@ -16,23 +16,23 @@ const render = require("./lib/htmlRenderer");
 
 var employees = [];
 
-function askManager(){
+function askManager() {
     inquirer
         .prompt([
             {
-            type: "input",
-            message: "What is the manager's name?",
-            name: "managerName"
+                type: "input",
+                message: "What is the manager's name?",
+                name: "managerName"
             },
             {
-            type: "input",
-            message: "What is the manager's email?",
-            name: "managerEmail"
+                type: "input",
+                message: "What is the manager's email?",
+                name: "managerEmail"
             },
             {
-            type: "input",
-            message: "What is the manager's ID?",
-            name: "managerId"
+                type: "input",
+                message: "What is the manager's ID?",
+                name: "managerId"
             },
             {
                 type: "input",
@@ -40,17 +40,17 @@ function askManager(){
                 name: "officeNumber"
             }
         ])
-        .then(function(response) {
+        .then(function (response) {
             console.log(response);
         })
-        .then(function(){
+        .then(function () {
             anotherEmployee();
         })
-        }
+}
 
-// askManager();
+askManager();
 
-function anotherEmployee(){
+function anotherEmployee() {
     inquirer
         .prompt([
             {
@@ -60,76 +60,76 @@ function anotherEmployee(){
                 name: "anothertype"
             }
         ])
-        .then(function(response){
+        .then(function (response) {
             console.log(response)
         })
 }
 
-function askEngineer(){
+function askEngineer() {
     inquirer
-    .prompt([
-        {  
-            type: "input",
-            message:"What is the engineer's name?",
-            name: "engineerName"
-        },
-        {
-            type: "input",
-            message: "What is the engineer's email?",
-            name: "engineerEmail"
-        },
-        {
-            type: "input",
-            message: "What is the engineer's ID?",
-            name: "engineerID"
-        },
-        {
-            type: "input",
-            message: "What is the engineer's github username?",
-            name: "github"
-        }
-    ])
-    .then(function(response){
-        console.log(response);
-    })
-    .then(function(){
-        anotherEmployee();
-    })
+        .prompt([
+            {
+                type: "input",
+                message: "What is the engineer's name?",
+                name: "engineerName"
+            },
+            {
+                type: "input",
+                message: "What is the engineer's email?",
+                name: "engineerEmail"
+            },
+            {
+                type: "input",
+                message: "What is the engineer's ID?",
+                name: "engineerID"
+            },
+            {
+                type: "input",
+                message: "What is the engineer's github username?",
+                name: "github"
+            }
+        ])
+        .then(function (response) {
+            console.log(response);
+        })
+        .then(function () {
+            anotherEmployee();
+        })
 }
 
-function askIntern(){
+function askIntern() {
     inquirer
-    .prompt([
-        {
-            type: "input",
-            message: "What is the intern's name?",
-            name: "internName"
-        },
-        {
-            type: "input",
-            message: "What is the intern's email?",
-            name: "internEmail"
-        },
-        {
-            type: "input",
-            message: "What is the intern's ID?",
-            name: "internId"
-        },
-        {
-            type: "input",
-            message: "What is the intern's school?",
-            name: "internSchool"
-        }
-    ])
-    .then(function(response){
-        console.log(response)
-    })
-    .then(function(){
-        anotherEmployee();
-    })
+        .prompt([
+            {
+                type: "input",
+                message: "What is the intern's name?",
+                name: "internName"
+            },
+            {
+                type: "input",
+                message: "What is the intern's email?",
+                name: "internEmail"
+            },
+            {
+                type: "input",
+                message: "What is the intern's ID?",
+                name: "internId"
+            },
+            {
+                type: "input",
+                message: "What is the intern's school?",
+                name: "internSchool"
+            }
+        ])
+        .then(function (response) {
+            console.log(response)
+        })
+        .then(function () {
+            anotherEmployee();
+        })
 }
 
-askIntern();
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
